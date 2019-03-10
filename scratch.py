@@ -1,4 +1,4 @@
-
+import numpy as np
 
 def print_list_and_type(list_):
     print()
@@ -14,15 +14,32 @@ def times_list(n, list_):
     return list_
 
 
+def print_np_object_properties(np_array):
+    print("LISTING FOR numpy OBJECT:")
+    print("Data-type of Array:")
+    print(np_array.dtype)
+    print("Data-type size of an item: (byte)")
+    print(np_array.itemsize)
+    print("Total number of elements in the array:")
+    print(np_array.size)
+
+
 my_list = [1, 2, 3]
 my_list2 = times_list(2, [1, 2, 3])
 my_list3 = times_list(3, [1, 2, 3])
 
-# Wrong output on first and last List-Element!
 lists_of_lists = [my_list, my_list2, my_list3]
 
 print_list_and_type(my_list)
 print_list_and_type(my_list2)
 print_list_and_type(my_list3)
 print_list_and_type(lists_of_lists)
+
+yet_another_list_of_lists = [(times_list(1, my_list)), (times_list(1, my_list2)), (times_list(1, my_list3))]
+print_list_and_type(yet_another_list_of_lists)
+
+# for more flexibility from now on using numpy:
+
+my_np_array = np.array(lists_of_lists)
+print_np_object_properties(my_np_array)
 
