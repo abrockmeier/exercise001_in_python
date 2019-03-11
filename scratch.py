@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def print_list_and_type(list_):
     print()
     print(list_)
@@ -40,6 +41,14 @@ print_list_and_type(yet_another_list_of_lists)
 
 # for more flexibility from now on using numpy:
 
-my_np_array = np.array(lists_of_lists)
-print_np_object_properties(my_np_array)
+np_array_from_list_of_lists = np.array(lists_of_lists)
+print_np_object_properties(np_array_from_list_of_lists)
 
+np_array_3d = np.arange(24).reshape(2,3,4)
+print(np_array_3d)
+print
+print_list_and_type(np_array_3d)
+np_array_3d_2 = np_array_3d*2
+print(np_array_3d_2)
+print()
+print_list_and_type(np_array_3d_2)
